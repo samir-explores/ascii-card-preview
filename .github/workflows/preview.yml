@@ -28,8 +28,19 @@ jobs:
       GH_TOKEN: ${{ github.token }}
       REPO: ${{ github.repository }}
       NUMBER: ${{ github.event.issue.number }}
+      RUN: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
     steps:
       - uses: actions/checkout@v4
+
+      - name: Say it's building
+        run: |
+          {
+            echo "<!-- ascii-profile-card:preview -->"
+            echo "## ⏳ Building your card…"
+            echo
+            echo "This usually takes a minute or two. [Watch it run]($RUN)."
+          } > status.md
+          .github/scripts/preview-reply.sh status.md
 
       - uses: actions/setup-python@v5
         with:
@@ -86,20 +97,15 @@ jobs:
 
       - name: Reply on the issue
         if: steps.card.outputs.ok == 'true' || steps.card.outputs.ok == 'false'
-        run: |
-          # one reply per issue, updated on every edit
-          id=$(gh api "repos/$REPO/issues/$NUMBER/comments" --paginate \
-            --jq '.[] | select(.user.login == "github-actions[bot]" and (.body | contains("<!-- ascii-profile-card:preview -->"))) | .id' | tail -n1)
-          if [ -n "$id" ]; then
-            gh api -X PATCH "repos/$REPO/issues/comments/$id" -F body=@preview-out/comment.md > /dev/null
-          else
-            gh issue comment "$NUMBER" --repo "$REPO" --body-file preview-out/comment.md
-          fi
+        run: .github/scripts/preview-reply.sh preview-out/comment.md
 
       - name: Say so if something broke
         if: failure()
-        env:
-          RUN: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
-          gh issue comment "$NUMBER" --repo "$REPO" \
-            --body "Something went wrong building your card ([log]($RUN)). Edit the issue to try again."
+          {
+            echo "<!-- ascii-profile-card:preview -->"
+            echo "## Couldn't build your card"
+            echo
+            echo "Something went wrong on our side ([log]($RUN)). **Edit this issue** to try again."
+          } > status.md
+          .github/scripts/preview-reply.sh status.md
