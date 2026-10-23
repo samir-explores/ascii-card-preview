@@ -5,10 +5,6 @@ body:
   - type: markdown
     attributes:
       value: |
-        <p align="center">
-          <img src="https://raw.githubusercontent.com/samir-created/ascii-profile-card/main/assets/profile-demo.gif" width="640" alt="An ASCII profile card">
-        </p>
-
         <h2 align="center">Preview your ASCII profile card</h2>
 
         <p align="center">
