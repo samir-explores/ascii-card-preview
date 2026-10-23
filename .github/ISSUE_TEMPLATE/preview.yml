@@ -97,34 +97,6 @@ body:
         ---
         ## 🎨 Style
 
-        <details>
-        <summary><b>See every theme</b></summary>
-        <br>
-        <table>
-        <tr>
-        <td align="center"><img src="https://raw.githubusercontent.com/samir-created/ascii-profile-card/main/examples/dark/theme-github.svg" width="300"><br><code>github</code></td>
-        <td align="center"><img src="https://raw.githubusercontent.com/samir-created/ascii-profile-card/main/examples/dark/theme-dracula.svg" width="300"><br><code>dracula</code></td>
-        </tr>
-        <tr>
-        <td align="center"><img src="https://raw.githubusercontent.com/samir-created/ascii-profile-card/main/examples/dark/theme-nord.svg" width="300"><br><code>nord</code></td>
-        <td align="center"><img src="https://raw.githubusercontent.com/samir-created/ascii-profile-card/main/examples/dark/theme-gruvbox.svg" width="300"><br><code>gruvbox</code></td>
-        </tr>
-        <tr>
-        <td align="center"><img src="https://raw.githubusercontent.com/samir-created/ascii-profile-card/main/examples/dark/theme-tokyo-night.svg" width="300"><br><code>tokyo-night</code></td>
-        <td align="center"><img src="https://raw.githubusercontent.com/samir-created/ascii-profile-card/main/examples/dark/theme-catppuccin.svg" width="300"><br><code>catppuccin</code></td>
-        </tr>
-        <tr>
-        <td align="center"><img src="https://raw.githubusercontent.com/samir-created/ascii-profile-card/main/examples/dark/theme-solarized.svg" width="300"><br><code>solarized</code></td>
-        <td align="center"><img src="https://raw.githubusercontent.com/samir-created/ascii-profile-card/main/examples/dark/theme-monokai.svg" width="300"><br><code>monokai</code></td>
-        </tr>
-        <tr>
-        <td align="center"><img src="https://raw.githubusercontent.com/samir-created/ascii-profile-card/main/examples/dark/theme-one-dark.svg" width="300"><br><code>one-dark</code></td>
-        <td align="center"><img src="https://raw.githubusercontent.com/samir-created/ascii-profile-card/main/examples/dark/theme-rose-pine.svg" width="300"><br><code>rose-pine</code></td>
-        </tr>
-        </table>
-        Every theme also has a light version, shown to people browsing GitHub in light mode.
-        </details>
-
   - type: dropdown
     id: theme
     attributes:
@@ -199,20 +171,6 @@ body:
       default: 0
     validations:
       required: true
-
-  # ---------------------------------------------------------------------------------------------
-  - type: markdown
-    attributes:
-      value: |
-        ---
-        ## ✨ Extras
-
-        <table>
-        <tr>
-        <td align="center"><img src="https://raw.githubusercontent.com/samir-created/ascii-profile-card/main/examples/dark/frame-window.svg" width="300"><br><code>window</code> frame</td>
-        <td align="center"><img src="https://raw.githubusercontent.com/samir-created/ascii-profile-card/main/examples/dark/invert.svg" width="300"><br><code>invert</code></td>
-        </tr>
-        </table>
 
   - type: dropdown
     id: frame
