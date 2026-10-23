@@ -215,23 +215,23 @@ nord
 
 ### Layout
 
-stacked
+stacked (portrait on top, reads better on phones)
 
 ### Info style
 
-arrows
+arrows (› key → value)
 
 ### Portrait characters
 
-blocks
+blocks ( ░▒▓█ )
 
 ### Framing
 
-shoulders
+shoulders (head and shoulders)
 
 ### Frame
 
-window
+window (terminal title bar)
 
 ### Animations
 
@@ -272,12 +272,16 @@ class PreviewTest(unittest.TestCase):
     def test_form_choices_match_the_builder(self):
         form = yaml.safe_load((ROOT / ".github/ISSUE_TEMPLATE/preview.yml").read_text(encoding="utf-8"))
         fields = {f["attributes"]["label"]: f["attributes"] for f in form["body"] if f["type"] != "markdown"}
-        self.assertEqual(fields["Theme"]["options"], list(PRESETS))
-        self.assertEqual(fields["Layout"]["options"], list(config.LAYOUTS))
-        self.assertEqual(fields["Info style"]["options"], list(config.INFO_STYLES))
-        self.assertEqual(fields["Portrait characters"]["options"], list(config.CHARSETS))
-        self.assertEqual(sorted(fields["Framing"]["options"]), sorted(config.FRAMINGS))
-        self.assertEqual(fields["Frame"]["options"], list(config.FRAMES))
+
+        def names(label):  # the option names, without their descriptions
+            return [preview.choice({label: o}, label, None) for o in fields[label]["options"]]
+
+        self.assertEqual(names("Theme"), list(PRESETS))
+        self.assertEqual(names("Layout"), list(config.LAYOUTS))
+        self.assertEqual(names("Info style"), list(config.INFO_STYLES))
+        self.assertEqual(names("Portrait characters"), list(config.CHARSETS))
+        self.assertEqual(sorted(names("Framing")), sorted(config.FRAMINGS))
+        self.assertEqual(names("Frame"), list(config.FRAMES))
         self.assertEqual([o["label"] for o in fields["Animations"]["options"]], list(config.ANIMATIONS))
         self.assertIn("Your photo", fields)
 

@@ -117,6 +117,12 @@ def ticked(text):
     return [m.strip() for m in re.findall(r"^- \[[xX]\] (.+)$", text or "", re.M)]
 
 
+def choice(form, label, default):
+    """A dropdown answer is the option's name, then maybe a description: "side (portrait left)"."""
+    words = (form.get(label) or "").split()
+    return words[0] if words else default
+
+
 def to_config(form, base):
     """The issue's answers laid over the repo's config.yml, so everything else keeps its defaults."""
     raw = copy.deepcopy(base)
@@ -124,15 +130,15 @@ def to_config(form, base):
     raw["title"] = clip(form.get("Title") or "") or "you@yourname"
     raw["info"] = info_rows(form.get("Details") or "")
     raw["portrait"] = {**(raw.get("portrait") or {}), "photo": "photo.jpg", "ascii": "ascii.txt",
-                       "framing": form.get("Framing") or "head"}
+                       "framing": choice(form, "Framing", "head")}
     raw["portrait"].pop("crop", None)  # a crop for someone else's photo would be wrong for this one
     raw["style"] = {
-        "theme": form.get("Theme") or "github",
-        "layout": form.get("Layout") or "side",
-        "info_style": form.get("Info style") or "dots",
-        "charset": form.get("Portrait characters") or "classic",
+        "theme": choice(form, "Theme", "github"),
+        "layout": choice(form, "Layout", "side"),
+        "info_style": choice(form, "Info style", "dots"),
+        "charset": choice(form, "Portrait characters", "classic"),
         "invert": "invert" in ticked(form.get("Invert")),
-        "frame": form.get("Frame") or "plain",
+        "frame": choice(form, "Frame", "plain"),
         "animations": ticked(form.get("Animations")),
     }
     raw.pop("themes", None)
