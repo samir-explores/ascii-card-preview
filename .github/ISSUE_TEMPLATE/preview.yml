@@ -203,13 +203,6 @@ body:
         <img src="https://raw.githubusercontent.com/samir-created/ascii-profile-card/main/assets/showcase-charsets.png" alt="classic, blocks, binary, dots, dense and hex character sets">
         </details>
 
-  # ---------------------------------------------------------------------------------------------
-  - type: markdown
-    attributes:
-      value: |
-        ---
-        ## ✨ Extras
-
   - type: dropdown
     id: frame
     attributes:
@@ -220,15 +213,6 @@ body:
       default: 0
     validations:
       required: true
-
-  - type: markdown
-    attributes:
-      value: |
-        <details>
-        <summary><b>See the window frame</b></summary>
-        <br>
-        <img src="https://raw.githubusercontent.com/samir-created/ascii-profile-card/main/examples/dark/frame-window.svg" width="480" alt="A card with the window frame">
-        </details>
 
   - type: checkboxes
     id: animations
@@ -247,15 +231,6 @@ body:
       description: Flip light and dark in the portrait for a glowing look.
       options:
         - label: invert
-
-  - type: markdown
-    attributes:
-      value: |
-        <details>
-        <summary><b>See an inverted portrait</b></summary>
-        <br>
-        <img src="https://raw.githubusercontent.com/samir-created/ascii-profile-card/main/examples/dark/invert.svg" width="480" alt="A card with an inverted portrait">
-        </details>
 
   - type: markdown
     attributes:
