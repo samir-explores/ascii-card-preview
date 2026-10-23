@@ -5,7 +5,6 @@ Run from the repo root: python -m card.preview <out dir>
 Reads the issue text from $ISSUE_BODY and writes, into <out dir>, the cards, the config.yml
 they were built from and comment.md (the reply, with __BASE__ where the cards' URL goes).
 """
-import copy
 import os
 import re
 import sys
@@ -123,35 +122,79 @@ def choice(form, label, default):
     return words[0] if words else default
 
 
+def scalar(value):
+    """One value written the way YAML would on a single line: here@me, "a: b", [rain, cursor]."""
+    text = yaml.safe_dump(value, default_flow_style=True, allow_unicode=True, width=10_000)
+    return text.removesuffix("\n...\n").strip()
+
+
+def set_value(lines, section, key, value):
+    """Set `key:` (top level, or under `section:`), keeping the comment after it. Added if missing."""
+    indent = "  " if section else ""
+    pattern = re.compile(rf"^{indent}{re.escape(key)}:[ \t]*(?:[^#\n]*?)(?P<comment>[ \t]+#.*)?$")
+    inside = not section
+    for i, line in enumerate(lines):
+        if section and re.match(r"[^\s#]", line):
+            inside = line.startswith(f"{section}:")
+        m = inside and pattern.match(line)
+        if m:
+            lines[i] = f"{indent}{key}: {scalar(value)}"
+            if m.group("comment"):  # keep the comment in its column, so the comments still line up
+                hint = m.group("comment").lstrip()
+                lines[i] = lines[i].ljust(len(line) - len(hint) - 1) + " " + hint
+            return
+    at = next((i + 1 for i, line in enumerate(lines) if line.startswith(f"{section}:")), len(lines))
+    if section and at == len(lines):
+        lines.append(f"{section}:")
+        at += 1
+    lines.insert(at, f"{indent}{key}: {scalar(value)}")
+
+
+def set_block(lines, key, body):
+    """Swap everything under a top-level `key:` for body (a list of lines); no body removes it."""
+    start = next((i for i, line in enumerate(lines) if line.startswith(f"{key}:")), None)
+    if start is None:
+        if body:
+            lines += [f"{key}:", *body]
+        return
+    end = start + 1
+    while end < len(lines) and (not lines[end].strip() or lines[end][0] in " \t-"):
+        end += 1
+    while end > start + 1 and not lines[end - 1].strip():
+        end -= 1  # leave the blank lines before the next section where they are
+    lines[start:end] = [f"{key}:", *body] if body else []
+
+
 def to_config(form, base):
-    """The issue's answers laid over the repo's config.yml, so everything else keeps its defaults."""
-    raw = copy.deepcopy(base)
-    raw.pop("header", None)
-    raw["title"] = clip(form.get("Title") or "") or "you@yourname"
-    raw["info"] = info_rows(form.get("Details") or "")
-    raw["portrait"] = {**(raw.get("portrait") or {}), "photo": "photo.jpg", "ascii": "ascii.txt",
-                       "framing": choice(form, "Framing", "head")}
-    raw["portrait"].pop("crop", None)  # a crop for someone else's photo would be wrong for this one
-    raw["style"] = {
-        "theme": choice(form, "Theme", "github"),
-        "layout": choice(form, "Layout", "side"),
-        "info_style": choice(form, "Info style", "dots"),
-        "charset": choice(form, "Portrait characters", "classic"),
-        "invert": "invert" in ticked(form.get("Invert")),
-        "frame": choice(form, "Frame", "plain"),
-        "animations": ticked(form.get("Animations")),
-    }
-    raw.pop("themes", None)
-    return raw
+    """The repo's config.yml text with the issue's answers written into it, so everything else
+    (comments, thought symbols, layout) stays exactly as it is there."""
+    lines = base.rstrip("\n").split("\n")
+    set_value(lines, None, "title", clip(form.get("Title") or "") or "you@yourname")
+    rows = info_rows(form.get("Details") or "")
+    set_block(lines, "info", ['  - ""' if not row else
+                              "  - " + ", ".join(f"{scalar(k)}: {scalar(v)}" for k, v in row.items())
+                              for row in rows])
+    set_block(lines, "header", None)  # the repo owner's greeting isn't yours
+    set_value(lines, "portrait", "photo", "photo.jpg")
+    set_value(lines, "portrait", "ascii", "ascii.txt")
+    set_value(lines, "portrait", "framing", choice(form, "Framing", "head"))
+    # a crop for someone else's photo would be wrong for this one
+    lines[:] = [f"  # {line.strip()}" if re.match(r"  crop:", line) else line for line in lines]
+    for key, label, default in (("theme", "Theme", "github"), ("layout", "Layout", "side"),
+                                ("info_style", "Info style", "dots"), ("charset", "Portrait characters", "classic"),
+                                ("frame", "Frame", "plain")):
+        set_value(lines, "style", key, choice(form, label, default))
+    set_value(lines, "style", "invert", "invert" in ticked(form.get("Invert")))
+    set_value(lines, "style", "animations", ticked(form.get("Animations")))
+    return "\n".join(lines) + "\n"
 
 
 def make(body, out, token=None):
     """Build the cards into out. Raises PreviewError with a message for the issue's author."""
     form = parse_form(body)
-    with open(config.ROOT / "config.yml", encoding="utf-8") as f:
-        raw = to_config(form, yaml.safe_load(f) or {})
+    text = to_config(form, (config.ROOT / "config.yml").read_text(encoding="utf-8"))
     out.mkdir(parents=True, exist_ok=True)
-    (out / "config.yml").write_text(yaml.safe_dump(raw, allow_unicode=True, sort_keys=False), encoding="utf-8")
+    (out / "config.yml").write_text(text, encoding="utf-8")
     try:
         cfg = config.load(out / "config.yml")
     except config.ConfigError as e:

@@ -324,13 +324,28 @@ window (terminal title bar)
 
 class PreviewTest(unittest.TestCase):
     def test_form_answers_become_a_config(self):
-        raw = preview.to_config(preview.parse_form(FORM), {"title": "x", "portrait": {"crop": [1, 2, 3, 4]}})
+        base = (ROOT / "config.yml").read_text(encoding="utf-8")
+        base = base.replace("  # crop: [120, 40, 900, 1000]", "  crop: [120, 40, 900, 1000]")
+        base = base.replace("\ninfo:", '\nheader:\n  - "Hi, I\'m the repo owner"\n\ninfo:')
+        text = preview.to_config(preview.parse_form(FORM), base)
+        raw = yaml.safe_load(text)
         self.assertEqual(raw["title"], "ada@lovelace")
         self.assertEqual(raw["info"], [{"OS": "Analytical Engine"}, {"section": "Contact"}, {"Email": "ada@example.com: yes"}])
         self.assertEqual(raw["style"], {"theme": "nord", "layout": "stacked", "info_style": "arrows", "charset": "blocks",
                                         "invert": False, "frame": "window", "animations": ["rain", "cursor"]})
         self.assertNotIn("crop", raw["portrait"])
+        self.assertNotIn("header", raw)
         self.assertEqual(raw["portrait"]["framing"], "shoulders")
+        # everything the form doesn't ask about is left exactly as written, comments and all
+        self.assertIn('  symbols: [\n    "∑", "π",', text)
+        self.assertIn("  theme: nord           # github, dracula", text)
+        self.assertIn("# Each entry is one row of the card:", text)
+        self.assertEqual(raw["thoughts"], yaml.safe_load(base)["thoughts"])
+
+    def test_missing_keys_are_added(self):
+        text = preview.to_config(preview.parse_form(FORM), "title: x\n")
+        raw = yaml.safe_load(text)
+        self.assertEqual((raw["style"]["theme"], raw["portrait"]["framing"]), ("nord", "shoulders"))
 
     def test_only_uploaded_photos_are_fetched(self):
         self.assertEqual(preview.photo_url("![me](https://github.com/user-attachments/assets/42)"),
