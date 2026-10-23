@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" font-family="ConsolasFallback,Consolas,'SFMono-Regular',Menlo,monospace" width="1126" height="600">
+<style>
+.key {fill: #ffa657;}
+.value {fill: #a5d6ff;}
+.dots {fill: #616e7f;}
+text, tspan {white-space: pre;}
+.thought {opacity: 0; transform-box: fill-box; transform-origin: center; animation: think ease-out infinite;}
+@keyframes think {
+  0% {opacity: 0; transform: translate(0, 0) scale(0.6);}
+  20% {opacity: 0.95;}
+  70% {opacity: 0.6;}
+  100% {opacity: 0; transform: translate(var(--drift), -75px) scale(1.1);}
+}
+.rain {opacity: 0.35; animation: fall linear infinite;}
+@keyframes fall {from {transform: translateY(-100%);} to {transform: translateY(var(--fall));}}
+.cursor {animation: blink 1s step-end infinite;}
+@keyframes blink {0%, 100% {opacity: 1;} 50% {opacity: 0;}}
+@media (prefers-reduced-motion: reduce) {
+  .thought, .rain {display: none;}
+  .cursor {animation: none;}
+}
+</style>
+<defs><clipPath id="card"><rect width="1126" height="600" rx="15"/></clipPath></defs>
+<rect width="1126" height="600" fill="#161b22" rx="15"/>
+<g clip-path="url(#card)">
+<text class="rain" y="0" font-size="11px" fill="#616e7f" style="--fall: 796px; animation-duration: 9.74s; animation-delay: -2.71s"><tspan x="16" dy="0">#</tspan><tspan x="11" dy="13">)</tspan><tspan x="8" dy="13">B</tspan><tspan x="12" dy="13">1</tspan><tspan x="7" dy="13">X</tspan><tspan x="8" dy="13">,</tspan><tspan x="13" dy="13">q</tspan><tspan x="18" dy="13">[</tspan><tspan x="13" dy="13">$</tspan><tspan x="7" dy="13">&quot;</tspan><tspan x="8" dy="13">j</tspan><tspan x="13" dy="13">#</tspan><tspan x="10" dy="13">(</tspan><tspan x="12" dy="13">z</tspan><tspan x="12" dy="13">!</tspan></text>
+<text class="rain" y="0" font-size="11px" fill="#616e7f" style="--fall: 808px; animation-duration: 7.07s; animation-delay: -3.29s"><tspan x="64" dy="0">!</tspan><tspan x="60" dy="13">U</tspan><tspan x="61" dy="13">B</tspan><tspan x="55" dy="13">I</tspan><tspan x="59" dy="13">&lt;</tspan><tspan x="57" dy="13">z</tspan><tspan x="57" dy="13">`</tspan><tspan x="62" dy="13">.</tspan><tspan x="55" dy="13">:</tspan><tspan x="58" dy="13">q</tspan><tspan x="57" dy="13">(</tspan><tspan x="61" dy="13">u</tspan><tspan x="56" dy="13">Y</tspan><tspan x="56" dy="13">d</tspan><tspan x="61" dy="13">+</tspan><tspan x="54" dy="13">&gt;</tspan></text>
+<text class="rain" y="0" font-size="11px" fill="#616e7f" style="--fall: 796px; animation-duration: 8.25s; animation-delay: -5.25s"><tspan x="100" dy="0">)</tspan><tspan x="103" dy="13">)</tspan><tspan x="110" dy="13">_</tspan><tspan x="103" dy="13">w</tspan><tspan x="99" dy="13">b</tspan><tspan x="110" dy="13">.</tspan><tspan x="101" dy="13">X</tspan><tspan x="110" dy="13">`</tspan><tspan x="101" dy="13">q</tspan><tspan x="110" dy="13">&gt;</tspan><tspan x="99" dy="13">?</tspan><tspan x="101" dy="13">n</tspan><tspan x="98" dy="13">C</tspan><tspan x="108" dy="13">w</tspan><tspan x="99" dy="13">i</tspan></text>
+<text class="rain" y="0" font-size="11px" fill="#616e7f" style="--fall: 704px; animation-duration: 11.44s; animation-delay: -10.75s"><tspan x="151" dy="0">Z</tspan><tspan x="151" dy="13">_</tspan><tspan x="156" dy="13">W</tspan><tspan x="154" dy="13">-</tspan><tspan x="154" dy="13">1</tspan><tspan x="152" dy="13">Y</tspan><tspan x="155" dy="13">r</tspan><tspan x="153" dy="13">[</tspan></text>
+<text class="rain" y="0" font-size="11px" fill="#616e7f" style="--fall: 744px; animation-duration: 8.68s; animation-delay: -7.96s"><tspan x="198" dy="0">w</tspan><tspan x="201" dy="13">!</tspan><tspan x="195" dy="13">&lt;</tspan><tspan x="191" dy="13">B</tspan><tspan x="202" dy="13">j</tspan><tspan x="199" dy="13">q</tspan><tspan x="193" dy="13">&amp;</tspan><tspan x="194" dy="13">{</tspan><tspan x="201" dy="13">I</tspan><tspan x="192" dy="13">W</tspan><tspan x="197" dy="13">l</tspan></text>
+<text class="rain" y="0" font-size="11px" fill="#616e7f" style="--fall: 744px; animation-duration: 11.21s; animation-delay: -10.79s"><tspan x="245" dy="0">I</tspan><tspan x="239" dy="13">o</tspan><tspan x="239" dy="13">,</tspan><tspan x="238" dy="13">Z</tspan><tspan x="242" dy="13">_</tspan><tspan x="237" dy="13">-</tspan><tspan x="247" dy="13">C</tspan><tspan x="244" dy="13">@</tspan><tspan x="243" dy="13">-</tspan><tspan x="243" dy="13">`</tspan><tspan x="242" dy="13">0</tspan></text>
+<text class="rain" y="0" font-size="11px" fill="#616e7f" style="--fall: 704px; animation-duration: 12.67s; animation-delay: -0.38s"><tspan x="289" dy="0">l</tspan><tspan x="288" dy="13">Y</tspan><tspan x="286" dy="13">l</tspan><tspan x="283" dy="13">Z</tspan><tspan x="291" dy="13">_</tspan><tspan x="292" dy="13">L</tspan><tspan x="286" dy="13">M</tspan><tspan x="293" dy="13">b</tspan></text>
+<text class="rain" y="0" font-size="11px" fill="#616e7f" style="--fall: 796px; animation-duration: 11.07s; animation-delay: -2.24s"><tspan x="335" dy="0">m</tspan><tspan x="333" dy="13">&#x27;</tspan><tspan x="335" dy="13">!</tspan><tspan x="329" dy="13">~</tspan><tspan x="340" dy="13">b</tspan><tspan x="337" dy="13">w</tspan><tspan x="339" dy="13">*</tspan><tspan x="333" dy="13">!</tspan><tspan x="334" dy="13">B</tspan><tspan x="328" dy="13">i</tspan><tspan x="334" dy="13">f</tspan><tspan x="339" dy="13">~</tspan><tspan x="334" dy="13">&amp;</tspan><tspan x="331" dy="13">&#x27;</tspan><tspan x="332" dy="13">?</tspan></text>
+<text class="rain" y="0" font-size="11px" fill="#616e7f" style="--fall: 730px; animation-duration: 11.27s; animation-delay: -10.70s"><tspan x="383" dy="0">L</tspan><tspan x="382" dy="13">a</tspan><tspan x="380" dy="13">j</tspan><tspan x="378" dy="13">x</tspan><tspan x="376" dy="13">h</tspan><tspan x="384" dy="13">(</tspan><tspan x="385" dy="13">w</tspan><tspan x="377" dy="13">U</tspan><tspan x="377" dy="13">-</tspan><tspan x="380" dy="13">,</tspan></text>
+<text class="rain" y="0" font-size="11px" fill="#616e7f" style="--fall: 756px; animation-duration: 9.73s; animation-delay: -0.24s"><tspan x="430" dy="0">~</tspan><tspan x="425" dy="13">v</tspan><tspan x="431" dy="13">d</tspan><tspan x="425" dy="13">@</tspan><tspan x="426" dy="13">U</tspan><tspan x="429" dy="13">o</tspan><tspan x="424" dy="13">&quot;</tspan><tspan x="423" dy="13">,</tspan><tspan x="428" dy="13">v</tspan><tspan x="427" dy="13">Y</tspan><tspan x="428" dy="13">`</tspan><tspan x="428" dy="13">p</tspan></text>
+<text class="rain" y="0" font-size="11px" fill="#616e7f" style="--fall: 756px; animation-duration: 7.78s; animation-delay: -3.53s"><tspan x="469" dy="0">?</tspan><tspan x="476" dy="13">~</tspan><tspan x="471" dy="13">Z</tspan><tspan x="478" dy="13">(</tspan><tspan x="468" dy="13">M</tspan><tspan x="469" dy="13">&#x27;</tspan><tspan x="475" dy="13">&quot;</tspan><tspan x="468" dy="13">u</tspan><tspan x="475" dy="13">@</tspan><tspan x="472" dy="13">[</tspan><tspan x="471" dy="13">t</tspan><tspan x="467" dy="13">w</tspan></text>
+<text class="rain" y="0" font-size="11px" fill="#616e7f" style="--fall: 704px; animation-duration: 9.09s; animation-delay: -0.75s"><tspan x="517" dy="0">%</tspan><tspan x="522" dy="13">L</tspan><tspan x="518" dy="13">|</tspan><tspan x="513" dy="13">+</tspan><tspan x="515" dy="13">w</tspan><tspan x="524" dy="13">Y</tspan><tspan x="518" dy="13">J</tspan><tspan x="515" dy="13">`</tspan></text>
+<text class="rain" y="0" font-size="11px" fill="#616e7f" style="--fall: 796px; animation-duration: 10.14s; animation-delay: -8.55s"><tspan x="562" dy="0">b</tspan><tspan x="567" dy="13">&amp;</tspan><tspan x="569" dy="13">/</tspan><tspan x="568" dy="13">I</tspan><tspan x="563" dy="13">&quot;</tspan><tspan x="560" dy="13">C</tspan><tspan x="566" dy="13">-</tspan><tspan x="564" dy="13">@</tspan><tspan x="569" dy="13">@</tspan><tspan x="568" dy="13">a</tspan><tspan x="569" dy="13">8</tspan><tspan x="565" dy="13">i</tspan><tspan x="567" dy="13">a</tspan><tspan x="564" dy="13">z</tspan><tspan x="568" dy="13">}</tspan></text>
+<text class="rain" y="0" font-size="11px" fill="#616e7f" style="--fall: 808px; animation-duration: 10.15s; animation-delay: -1.10s"><tspan x="607" dy="0">m</tspan><tspan x="615" dy="13">|</tspan><tspan x="608" dy="13">?</tspan><tspan x="616" dy="13">$</tspan><tspan x="607" dy="13">8</tspan><tspan x="606" dy="13">~</tspan><tspan x="610" dy="13">m</tspan><tspan x="604" dy="13">,</tspan><tspan x="610" dy="13">p</tspan><tspan x="611" dy="13">+</tspan><tspan x="610" dy="13">}</tspan><tspan x="605" dy="13">*</tspan><tspan x="609" dy="13">p</tspan><tspan x="607" dy="13">M</tspan><tspan x="610" dy="13">L</tspan><tspan x="609" dy="13">M</tspan></text>
+<text class="rain" y="0" font-size="11px" fill="#616e7f" style="--fall: 782px; animation-duration: 8.40s; animation-delay: -6.22s"><tspan x="657" dy="0">n</tspan><tspan x="652" dy="13">`</tspan><tspan x="650" dy="13">]</tspan><tspan x="653" dy="13">c</tspan><tspan x="654" dy="13">0</tspan><tspan x="653" dy="13">8</tspan><tspan x="651" dy="13">+</tspan><tspan x="660" dy="13">x</tspan><tspan x="659" dy="13">$</tspan><tspan x="661" dy="13">`</tspan><tspan x="655" dy="13">d</tspan><tspan x="660" dy="13">[</tspan><tspan x="656" dy="13">/</tspan><tspan x="656" dy="13">-</tspan></text>
+<text class="rain" y="0" font-size="11px" fill="#616e7f" style="--fall: 770px; animation-duration: 10.81s; animation-delay: -3.71s"><tspan x="707" dy="0">U</tspan><tspan x="703" dy="13">)</tspan><tspan x="699" dy="13">)</tspan><tspan x="707" dy="13">-</tspan><tspan x="707" dy="13">_</tspan><tspan x="705" dy="13">n</tspan><tspan x="701" dy="13">h</tspan><tspan x="706" dy="13">b</tspan><tspan x="703" dy="13">_</tspan><tspan x="698" dy="13">`</tspan><tspan x="697" dy="13">0</tspan><tspan x="707" dy="13">O</tspan><tspan x="697" dy="13">%</tspan></text>
+<text class="rain" y="0" font-size="11px" fill="#616e7f" style="--fall: 744px; animation-duration: 8.96s; animation-delay: -4.18s"><tspan x="752" dy="0">W</tspan><tspan x="743" dy="13">&quot;</tspan><tspan x="751" dy="13">B</tspan><tspan x="753" dy="13">W</tspan><tspan x="744" dy="13">1</tspan><tspan x="743" dy="13">{</tspan><tspan x="752" dy="13">c</tspan><tspan x="753" dy="13">&gt;</tspan><tspan x="749" dy="13">-</tspan><tspan x="753" dy="13">#</tspan><tspan x="743" dy="13">&gt;</tspan></text>
+<text class="rain" y="0" font-size="11px" fill="#616e7f" style="--fall: 808px; animation-duration: 7.80s; animation-delay: -2.57s"><tspan x="792" dy="0">|</tspan><tspan x="795" dy="13">&#x27;</tspan><tspan x="796" dy="13">,</tspan><tspan x="798" dy="13">1</tspan><tspan x="793" dy="13">O</tspan><tspan x="797" dy="13">p</tspan><tspan x="799" dy="13">}</tspan><tspan x="789" dy="13">&#x27;</tspan><tspan x="792" dy="13">!</tspan><tspan x="798" dy="13">p</tspan><tspan x="795" dy="13">)</tspan><tspan x="794" dy="13">L</tspan><tspan x="798" dy="13">n</tspan><tspan x="791" dy="13">~</tspan><tspan x="797" dy="13">[</tspan><tspan x="798" dy="13">p</tspan></text>
+<text class="rain" y="0" font-size="11px" fill="#616e7f" style="--fall: 808px; animation-duration: 7.30s; animation-delay: -1.43s"><tspan x="842" dy="0">h</tspan><tspan x="843" dy="13">p</tspan><tspan x="836" dy="13">1</tspan><tspan x="835" dy="13">L</tspan><tspan x="838" dy="13">&gt;</tspan><tspan x="834" dy="13">0</tspan><tspan x="846" dy="13">:</tspan><tspan x="837" dy="13">X</tspan><tspan x="838" dy="13">p</tspan><tspan x="841" dy="13">l</tspan><tspan x="839" dy="13">8</tspan><tspan x="842" dy="13">+</tspan><tspan x="843" dy="13">`</tspan><tspan x="835" dy="13">&lt;</tspan><tspan x="843" dy="13">x</tspan><tspan x="839" dy="13">%</tspan></text>
+<text class="rain" y="0" font-size="11px" fill="#616e7f" style="--fall: 782px; animation-duration: 9.90s; animation-delay: -2.67s"><tspan x="880" dy="0">n</tspan><tspan x="883" dy="13">L</tspan><tspan x="887" dy="13">B</tspan><tspan x="885" dy="13">@</tspan><tspan x="887" dy="13">&gt;</tspan><tspan x="888" dy="13">l</tspan><tspan x="887" dy="13">,</tspan><tspan x="885" dy="13">[</tspan><tspan x="885" dy="13">}</tspan><tspan x="890" dy="13">;</tspan><tspan x="885" dy="13">8</tspan><tspan x="885" dy="13">$</tspan><tspan x="885" dy="13">Y</tspan><tspan x="884" dy="13">c</tspan></text>
+<text class="rain" y="0" font-size="11px" fill="#616e7f" style="--fall: 756px; animation-duration: 7.87s; animation-delay: -7.55s"><tspan x="934" dy="0">z</tspan><tspan x="926" dy="13">r</tspan><tspan x="933" dy="13">[</tspan><tspan x="931" dy="13">w</tspan><tspan x="927" dy="13">U</tspan><tspan x="935" dy="13">:</tspan><tspan x="933" dy="13">U</tspan><tspan x="927" dy="13">t</tspan><tspan x="931" dy="13">W</tspan><tspan x="929" dy="13">r</tspan><tspan x="927" dy="13">&gt;</tspan><tspan x="937" dy="13">#</tspan></text>
+<text class="rain" y="0" font-size="11px" fill="#616e7f" style="--fall: 744px; animation-duration: 8.43s; animation-delay: -0.96s"><tspan x="979" dy="0">~</tspan><tspan x="973" dy="13">b</tspan><tspan x="977" dy="13">|</tspan><tspan x="982" dy="13">0</tspan><tspan x="978" dy="13">+</tspan><tspan x="976" dy="13">-</tspan><tspan x="980" dy="13">*</tspan><tspan x="979" dy="13">b</tspan><tspan x="976" dy="13">$</tspan><tspan x="982" dy="13">-</tspan><tspan x="983" dy="13">_</tspan></text>
+<text class="rain" y="0" font-size="11px" fill="#616e7f" style="--fall: 756px; animation-duration: 10.30s; animation-delay: -6.50s"><tspan x="1027" dy="0">0</tspan><tspan x="1021" dy="13">)</tspan><tspan x="1026" dy="13">j</tspan><tspan x="1020" dy="13">r</tspan><tspan x="1024" dy="13">(</tspan><tspan x="1029" dy="13">,</tspan><tspan x="1026" dy="13">&#x27;</tspan><tspan x="1021" dy="13">k</tspan><tspan x="1018" dy="13">&quot;</tspan><tspan x="1019" dy="13">v</tspan><tspan x="1019" dy="13">i</tspan><tspan x="1029" dy="13">[</tspan></text>
+<text class="rain" y="0" font-size="11px" fill="#616e7f" style="--fall: 770px; animation-duration: 10.26s; animation-delay: -4.43s"><tspan x="1070" dy="0">0</tspan><tspan x="1067" dy="13">L</tspan><tspan x="1070" dy="13">-</tspan><tspan x="1074" dy="13">l</tspan><tspan x="1074" dy="13">o</tspan><tspan x="1074" dy="13">/</tspan><tspan x="1069" dy="13">n</tspan><tspan x="1069" dy="13">]</tspan><tspan x="1068" dy="13">J</tspan><tspan x="1067" dy="13">1</tspan><tspan x="1069" dy="13">Z</tspan><tspan x="1071" dy="13">#</tspan><tspan x="1075" dy="13">!</tspan></text>
+<text class="rain" y="0" font-size="11px" fill="#616e7f" style="--fall: 796px; animation-duration: 11.97s; animation-delay: -0.29s"><tspan x="1120" dy="0">#</tspan><tspan x="1114" dy="13">&#x27;</tspan><tspan x="1111" dy="13">/</tspan><tspan x="1121" dy="13">!</tspan><tspan x="1118" dy="13">8</tspan><tspan x="1119" dy="13">J</tspan><tspan x="1113" dy="13">?</tspan><tspan x="1113" dy="13">J</tspan><tspan x="1114" dy="13">+</tspan><tspan x="1114" dy="13">a</tspan><tspan x="1117" dy="13">v</tspan><tspan x="1115" dy="13">Y</tspan><tspan x="1115" dy="13">t</tspan><tspan x="1115" dy="13">@</tspan><tspan x="1113" dy="13">O</tspan></text>
+</g>
+<text fill="#c9d1d9" font-size="9px">
+<tspan x="670.4" y="113.0">                                                             )))jjjjj)))?&gt;&gt;::...</tspan>
+<tspan x="670.4" y="123.5">                                                            jjzzLLLLzjj)?&gt;::....</tspan>
+<tspan x="670.4" y="134.0">                                                         ?))jzzzLLLzzj)?&gt;::.....</tspan>
+<tspan x="670.4" y="144.5">                                                      &gt;???)jjzzzzzzjj)?&gt;::......</tspan>
+<tspan x="670.4" y="155.0">                                                  ???????))jjzzzjj)??&gt;::........</tspan>
+<tspan x="670.4" y="165.5">                                               )))))))????))))j))?&gt;&gt;:...........</tspan>
+<tspan x="670.4" y="176.0">                                            ))jjjjj)))?????????&gt;&gt;:..............</tspan>
+<tspan x="670.4" y="186.5">                                          ??)jjjjjjj))??&gt;&gt;&gt;&gt;::::................</tspan>
+<tspan x="670.4" y="197.0">                                        &gt;??))jjjjjjj))??&gt;:::..............::::::</tspan>
+<tspan x="670.4" y="207.5">                                     :&gt;&gt;?))jjzzzzjjj)??&gt;::..............::::::::</tspan>
+<tspan x="670.4" y="218.0">                                   :&gt;&gt;??)jjzzzzzzjj))?&gt;&gt;::...........:::::::::::</tspan>
+<tspan x="670.4" y="228.5">                                 &gt;&gt;&gt;&gt;?)jjzLLLLLLzjj)?&gt;&gt;:::......::::::&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</tspan>
+<tspan x="670.4" y="239.0">                              &gt;&gt;&gt;&gt;???)jzLLwwwwwLzj))?&gt;&gt;::::::::::::&gt;&gt;&gt;&gt;&gt;????????</tspan>
+<tspan x="670.4" y="249.5">                            ???????))jzLwwhhhwLzzj)?&gt;&gt;&gt;&gt;&gt;:::&gt;:&gt;:&gt;&gt;&gt;&gt;&gt;????)))))))</tspan>
+<tspan x="670.4" y="260.0">                          ????)))))jjjzLLLwLLLzj))?&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;????))))))jjj)</tspan>
+<tspan x="670.4" y="270.5">                        ?)))))))jjjjjjzzzzzzj)))??&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;???)))))))jjjjj)</tspan>
+<tspan x="670.4" y="281.0">                      ))))))jjjjjjzjjjjjjjj))??&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;??))))jjjjjjjzzz)</tspan>
+<tspan x="670.4" y="291.5">                    jjjjjjjzzzzzzzzzjjjjjjjjj))))?????&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;???)jjjjjjjjjzzzz)</tspan>
+<tspan x="670.4" y="302.0">                  jjjjzzzzzzzLLLLzzzjjjzzzzzzzzzjjj))???&gt;&gt;&gt;&gt;&gt;&gt;??))jjjzzzzzzzjjj)</tspan>
+<tspan x="670.4" y="312.5">                jjjjzzzzzLLLLLLLzzzjjjjzzLLLLLLLzzjj))??&gt;&gt;&gt;&gt;&gt;&gt;&gt;??))jjzzzLzzzjjj)</tspan>
+<tspan x="670.4" y="323.0">             jzzzzzzzzzzLLLLLLLzzjjjjjjzzLLwwLLLzzzjj))??&gt;&gt;&gt;&gt;&gt;&gt;??))jzzLLLLzzjjj)</tspan>
+<tspan x="670.4" y="333.5">           zzzzzzzzzzzzzLLLLLLzzzjjjjjjzLLLwwLLLzzzjj))??&gt;&gt;&gt;&gt;&gt;??))jzzLwwwLLzjj))</tspan>
+<tspan x="670.4" y="344.0">         zzLLLLLLLLLLLLLLLLLLLzzzzzjjjjzzzLLLLLLLzzzjj))??&gt;???))jzzLwwwwwLzzjj))</tspan>
+<tspan x="670.4" y="354.5">       zzzLLLLwwwwLLLLLLLLLLLLLLLzzzzjjzzzzzzzzzzzzzjj))?????)jzzLwhhhhwwLzjj)))</tspan>
+<tspan x="670.4" y="365.0">      zzLLLwwwwwwwwLLLLLLLLLLwwLLLzzzjjjjjjjjzzzzzzzjjj)))))))jzLwhhWWhhwLzjj)))</tspan>
+<tspan x="670.4" y="375.5">    jzzLLwwwwwwwwwLLzzzzLLLwwwwwLLLzjjj)))))jjjjjjzjjjjj)))))jzLwwhWWWhhwLzjj)))</tspan>
+<tspan x="670.4" y="386.0"> zzzzLLwwwwwwwwwLLzzzzzzLLwwwwwwLLzzjjj))))))jjjjjjjjjjjjj))jjzLwwhWWWWhwLzzjj))</tspan>
+<tspan x="670.4" y="396.5">jLLLLwwwwwwwwwLLLzzzjzzzLwwwwwwLLzzjjjjjjjjjjjjjjjzzzzzzjjjjjjzLwwhhWWhhwLLzzjj)</tspan>
+<tspan x="670.4" y="407.0">zwwwwhhhhhwwwLLzzzjjzzLLwwwwwwLLzzjjjjjjjjjjjjjzzzLLLLLzzzzzzzzLwwhhhhhwwLLzzzz)</tspan>
+<tspan x="670.4" y="417.5">zhhhhhhhhhwwLzzjjjzzLLwwhhhhwwLLzzzzzzzzzzzzzzzLLwwwwwwLLzzzzzzLLwwwwwwwLLzzzzz)</tspan>
+<tspan x="670.4" y="428.0">LWWWWWWhhwwLzzjjjzzLwhhhhhhhwwwLLLLLzLzzzLLLLLwwhhWWWhhwwLzzzLLLLwwwwLLLzzzzzzz)</tspan>
+<tspan x="670.4" y="438.5">wWWWWWWWhwLzzjjjzzLwhWWWWhhwwwwwwwLLLLLLLLLLwwwhWWWWWWWhwwLLLLLLLLLLLLzzzzzzzzzj</tspan>
+<tspan x="670.4" y="449.0">wWWWWWWWhwLzzjzzLLwhhWWWhhwwwwwwwwwwLLLzzzLLwhhWWWWWWWWWhwwwLLLLLLLLLLLLzzLLLLLj</tspan>
+<tspan x="670.4" y="459.5">wWWWWWWhhwLzzzzLwwhhhhhhwwwLLLwwwwwLLLzzzzLwwhWWWWWWWWWWWhwwLLLLLLLLLLLLLLLLwwwz</tspan>
+<tspan x="670.4" y="470.0">wWWWWWhhwLzzzzLwwhhhhhwwwLLLLLwwwwwLLzzzzLLwhWWWWWWWWWWWWhwwLLzzzzLLLwwwwwwwwwwz</tspan>
+<tspan x="670.4" y="480.5">wWWWWhwLLzzzzLLwhhhhhhwwLLLLLLwwwwLLzzzzLwwWWWWWWWWWWWWWWhwLzzjjjzzLwwhhhhhwwwwz</tspan>
+<tspan x="670.4" y="491.0">wWWWhwLzzjjzzLwwhhhhhwwwLLwwwwwwwLLzzzzLwhWWWWWWWWWWWWWWWhwLzj))jjzLwhhhWhhhhwwz</tspan>
+<tspan x="670.4" y="501.5">LWhhwLzzjjzzLwwhhhhwwwLLwwwwwwwwwLLzzLLwhWWWWWWWWWWWWWWWWWhLzj))jzLwhhhWWWhhhhhz</tspan>
+<tspan x="670.4" y="512.0">LhhwwLLzzzLLwwwhhhwwwLLwwwhhhhwwwLLLLwwhWWWWWWWWWWWWWWWWWWhLzjjjzLwhhhWhhhhhhhhL</tspan>
+<tspan x="670.4" y="522.5">zwwwwLLLLLwwwwwwwwwLLLwwwhhhhhwLLLLLwhWWWWWWWWWWWWWWWWWWWhwLzjjzLwhhWWWhhhhWWWWL</tspan>
+<tspan x="670.4" y="533.0">zwwwwwwwwwwhwwwLLLLLLLwwhhhhhwLzzzLwhWWWWWWWWWWWWWWWWWWWhwLzzzzLwhWWWWWhhhhWWWWw</tspan>
+<tspan x="670.4" y="543.5">zhhhhhhhhhhhwwwLLLLLLwwwhhhwwLzzzLLhWWWWWWWWWWWWWWWWWWhwLzzzzzLwhWWWWWWhhhhWWWWw</tspan>
+<tspan x="670.4" y="554.0">LhhhWWWWWWhhwwwLLLLwwwwwwwwLLzzzLLwhWWWWWWWWWWWWWWWWWhwLzjjjzLwhhWWWWWhhhhhWWWWw</tspan>
+<tspan x="670.4" y="564.5">LhhWWWWWWWhhwwwwwwwwwwwwwLLzzzzLLwhWWWWWWWWWWWWWWWWWhwLzjjjjzLwhhWWWWhhhhhhWWWWw</tspan>
+<tspan x="670.4" y="575.0">jLLLLwwwLLLzzzzzzzzzzzzzjj)))))jzzLwwwwwwwwwwwwwwwLLzzj)))))jjzzLLLLLLzzzLLLwwwz</tspan>
+</text>
+
+<text fill="#c9d1d9" font-size="16px">
+<tspan x="24" y="316">here@testing <tspan class="dots">---------------------------------------------------</tspan></tspan>
+<tspan x="24" y="336"><tspan class="dots">. </tspan><tspan class="key">OS</tspan>:<tspan class="dots"> ....................................................... </tspan><tspan class="value">Me</tspan></tspan>
+<tspan x="24" y="356"><tspan class="dots">. </tspan><tspan class="key">Host</tspan>:<tspan class="dots"> ................................................. </tspan><tspan class="value">Myself</tspan></tspan>
+<tspan x="24" y="376"><tspan class="dots">. </tspan><tspan class="key">Uptime</tspan>:<tspan class="dots"> .................................... </tspan><tspan class="value">Powered by coffee</tspan></tspan>
+<tspan x="24" y="396"><tspan class="dots">.</tspan></tspan>
+<tspan x="24" y="416"><tspan class="dots">- </tspan>Contact <tspan class="dots">------------------------------------------------------</tspan></tspan>
+<tspan x="24" y="436"><tspan class="dots">. </tspan><tspan class="key">GitHub</tspan>:<tspan class="dots"> .......................................... </tspan><tspan class="value">ontest-haha</tspan></tspan>
+</text>
+<text class="thought" x="861" y="209" font-size="12px" fill="#ffa657" style="--drift: -12px; animation-duration: 6.45s; animation-delay: -4.20s">∑</text>
+<text class="thought" x="866" y="209" font-size="16px" fill="#a5d6ff" style="--drift: -5px; animation-duration: 6.17s; animation-delay: -3.13s">π</text>
+<text class="thought" x="870" y="198" font-size="12px" fill="#616e7f" style="--drift: -13px; animation-duration: 6.27s; animation-delay: -2.66s">∫dx</text>
+<text class="thought" x="877" y="198" font-size="13px" fill="#ffa657" style="--drift: -10px; animation-duration: 7.19s; animation-delay: -7.02s">√2</text>
+<text class="thought" x="881" y="198" font-size="13px" fill="#a5d6ff" style="--drift: 10px; animation-duration: 6.43s; animation-delay: -0.76s">λ</text>
+<text class="thought" x="885" y="188" font-size="12px" fill="#616e7f" style="--drift: -9px; animation-duration: 7.71s; animation-delay: -1.45s">∞</text>
+<text class="thought" x="892" y="188" font-size="16px" fill="#ffa657" style="--drift: 12px; animation-duration: 7.86s; animation-delay: -3.90s">Δ</text>
+<text class="thought" x="897" y="178" font-size="13px" fill="#a5d6ff" style="--drift: -11px; animation-duration: 7.36s; animation-delay: -2.21s">e^iπ</text>
+<text class="thought" x="900" y="178" font-size="14px" fill="#616e7f" style="--drift: 11px; animation-duration: 6.90s; animation-delay: -3.42s">x²</text>
+<text class="thought" x="907" y="167" font-size="13px" fill="#ffa657" style="--drift: -12px; animation-duration: 6.22s; animation-delay: -3.18s">log n</text>
+<text class="thought" x="914" y="167" font-size="14px" fill="#a5d6ff" style="--drift: -12px; animation-duration: 7.27s; animation-delay: -6.99s">&lt;?php</text>
+<text class="thought" x="916" y="167" font-size="12px" fill="#616e7f" style="--drift: 5px; animation-duration: 7.05s; animation-delay: -3.50s">$this-&gt;</text>
+<text class="thought" x="924" y="156" font-size="14px" fill="#ffa657" style="--drift: -11px; animation-duration: 7.42s; animation-delay: -4.93s">add_action()</text>
+<text class="thought" x="928" y="156" font-size="14px" fill="#a5d6ff" style="--drift: 11px; animation-duration: 8.98s; animation-delay: -7.38s">&lt;App /&gt;</text>
+<text class="thought" x="930" y="156" font-size="13px" fill="#616e7f" style="--drift: -9px; animation-duration: 7.39s; animation-delay: -1.24s">useState()</text>
+<text class="thought" x="938" y="146" font-size="16px" fill="#ffa657" style="--drift: 13px; animation-duration: 6.39s; animation-delay: -1.58s">{props}</text>
+<text class="thought" x="940" y="146" font-size="14px" fill="#a5d6ff" style="--drift: -12px; animation-duration: 7.35s; animation-delay: -4.04s">npm i</text>
+<text class="thought" x="948" y="146" font-size="13px" fill="#616e7f" style="--drift: 14px; animation-duration: 8.96s; animation-delay: -6.12s">await</text>
+<text class="thought" x="950" y="146" font-size="13px" fill="#ffa657" style="--drift: -9px; animation-duration: 6.45s; animation-delay: -4.25s">=&gt;</text>
+<text class="thought" x="956" y="146" font-size="14px" fill="#a5d6ff" style="--drift: 10px; animation-duration: 6.01s; animation-delay: -2.52s">def</text>
+<text class="thought" x="964" y="136" font-size="16px" fill="#616e7f" style="--drift: -9px; animation-duration: 8.07s; animation-delay: -4.16s">import</text>
+<text class="thought" x="966" y="136" font-size="12px" fill="#ffa657" style="--drift: 5px; animation-duration: 7.18s; animation-delay: -3.46s">print()</text>
+<text class="thought" x="974" y="136" font-size="13px" fill="#a5d6ff" style="--drift: -5px; animation-duration: 7.32s; animation-delay: -0.80s">AI</text>
+<text class="thought" x="977" y="125" font-size="16px" fill="#616e7f" style="--drift: -13px; animation-duration: 8.85s; animation-delay: -5.43s">LLM</text>
+<text class="thought" x="980" y="125" font-size="12px" fill="#ffa657" style="--drift: 9px; animation-duration: 6.76s; animation-delay: -2.35s">MCP</text>
+<text class="thought" x="989" y="125" font-size="13px" fill="#a5d6ff" style="--drift: 7px; animation-duration: 8.98s; animation-delay: -4.18s">agent.run()</text>
+<text class="thought" x="990" y="125" font-size="13px" fill="#616e7f" style="--drift: -9px; animation-duration: 7.03s; animation-delay: -1.86s">∇loss</text>
+</svg>
