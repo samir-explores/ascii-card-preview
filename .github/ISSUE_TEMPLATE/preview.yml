@@ -110,9 +110,31 @@ body:
     attributes:
       value: |
         <details>
-        <summary><b>See the layouts</b></summary>
+        <summary><b>See every theme</b></summary>
         <br>
-        <img src="https://raw.githubusercontent.com/samir-created/ascii-profile-card/main/assets/showcase-layouts.png" alt="side, portrait-right and stacked layouts">
+        <table>
+        <tr>
+        <td align="center"><img src="https://raw.githubusercontent.com/samir-created/ascii-profile-card/main/examples/dark/theme-github.svg" width="300"><br><code>github</code></td>
+        <td align="center"><img src="https://raw.githubusercontent.com/samir-created/ascii-profile-card/main/examples/dark/theme-dracula.svg" width="300"><br><code>dracula</code></td>
+        </tr>
+        <tr>
+        <td align="center"><img src="https://raw.githubusercontent.com/samir-created/ascii-profile-card/main/examples/dark/theme-nord.svg" width="300"><br><code>nord</code></td>
+        <td align="center"><img src="https://raw.githubusercontent.com/samir-created/ascii-profile-card/main/examples/dark/theme-gruvbox.svg" width="300"><br><code>gruvbox</code></td>
+        </tr>
+        <tr>
+        <td align="center"><img src="https://raw.githubusercontent.com/samir-created/ascii-profile-card/main/examples/dark/theme-tokyo-night.svg" width="300"><br><code>tokyo-night</code></td>
+        <td align="center"><img src="https://raw.githubusercontent.com/samir-created/ascii-profile-card/main/examples/dark/theme-catppuccin.svg" width="300"><br><code>catppuccin</code></td>
+        </tr>
+        <tr>
+        <td align="center"><img src="https://raw.githubusercontent.com/samir-created/ascii-profile-card/main/examples/dark/theme-solarized.svg" width="300"><br><code>solarized</code></td>
+        <td align="center"><img src="https://raw.githubusercontent.com/samir-created/ascii-profile-card/main/examples/dark/theme-monokai.svg" width="300"><br><code>monokai</code></td>
+        </tr>
+        <tr>
+        <td align="center"><img src="https://raw.githubusercontent.com/samir-created/ascii-profile-card/main/examples/dark/theme-one-dark.svg" width="300"><br><code>one-dark</code></td>
+        <td align="center"><img src="https://raw.githubusercontent.com/samir-created/ascii-profile-card/main/examples/dark/theme-rose-pine.svg" width="300"><br><code>rose-pine</code></td>
+        </tr>
+        </table>
+        Every theme also has a light version, shown to people browsing GitHub in light mode.
         </details>
 
   - type: dropdown
@@ -131,9 +153,9 @@ body:
     attributes:
       value: |
         <details>
-        <summary><b>See the info styles</b></summary>
+        <summary><b>See the layouts</b></summary>
         <br>
-        <img src="https://raw.githubusercontent.com/samir-created/ascii-profile-card/main/assets/showcase-info-styles.png" alt="dots, aligned and arrows info styles">
+        <img src="https://raw.githubusercontent.com/samir-created/ascii-profile-card/main/assets/showcase-layouts.png" alt="side, portrait-right and stacked layouts">
         </details>
 
   - type: dropdown
@@ -152,9 +174,9 @@ body:
     attributes:
       value: |
         <details>
-        <summary><b>See the portrait characters</b></summary>
+        <summary><b>See the info styles</b></summary>
         <br>
-        <img src="https://raw.githubusercontent.com/samir-created/ascii-profile-card/main/assets/showcase-charsets.png" alt="classic, blocks, binary, dots, dense and hex character sets">
+        <img src="https://raw.githubusercontent.com/samir-created/ascii-profile-card/main/assets/showcase-info-styles.png" alt="dots, aligned and arrows info styles">
         </details>
 
   - type: dropdown
@@ -172,6 +194,22 @@ body:
     validations:
       required: true
 
+  - type: markdown
+    attributes:
+      value: |
+        <details>
+        <summary><b>See the portrait characters</b></summary>
+        <br>
+        <img src="https://raw.githubusercontent.com/samir-created/ascii-profile-card/main/assets/showcase-charsets.png" alt="classic, blocks, binary, dots, dense and hex character sets">
+        </details>
+
+  # ---------------------------------------------------------------------------------------------
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        ## ✨ Extras
+
   - type: dropdown
     id: frame
     attributes:
@@ -182,6 +220,15 @@ body:
       default: 0
     validations:
       required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        <details>
+        <summary><b>See the window frame</b></summary>
+        <br>
+        <img src="https://raw.githubusercontent.com/samir-created/ascii-profile-card/main/examples/dark/frame-window.svg" width="480" alt="A card with the window frame">
+        </details>
 
   - type: checkboxes
     id: animations
@@ -200,6 +247,15 @@ body:
       description: Flip light and dark in the portrait for a glowing look.
       options:
         - label: invert
+
+  - type: markdown
+    attributes:
+      value: |
+        <details>
+        <summary><b>See an inverted portrait</b></summary>
+        <br>
+        <img src="https://raw.githubusercontent.com/samir-created/ascii-profile-card/main/examples/dark/invert.svg" width="480" alt="A card with an inverted portrait">
+        </details>
 
   - type: markdown
     attributes:
