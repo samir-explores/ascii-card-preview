@@ -1,4 +1,5 @@
 """Run with: python -m unittest discover -s tests"""
+import contextlib
 import copy
 import tempfile
 import unittest
@@ -178,6 +179,70 @@ class PortraitTest(unittest.TestCase):
         top, width, centre = portrait.head_span(mask)
         self.assertAlmostEqual(width, 200, delta=20)
         self.assertAlmostEqual(centre, 400, delta=16)
+
+    # Each of these draws the mask background removal would give for an awkward photo:
+    # a head 200 wide, centred at x=400, on shoulders, plus whatever makes the photo awkward.
+    def awkward(self, extra, head=(300, 150, 500, 390)):
+        mask = Image.new("L", (800, 700), 0)
+        d = ImageDraw.Draw(mask)
+        d.ellipse(head, fill=255)
+        d.polygon([(120, 700), (220, 400), (580, 400), (680, 700)], fill=255)
+        extra(d)
+        return portrait.head_span(mask)
+
+    def assertHead(self, found, top=None):
+        self.assertAlmostEqual(found[1], 200, delta=20)
+        self.assertAlmostEqual(found[2], 400, delta=16)
+        if top is not None:
+            self.assertAlmostEqual(found[0], top, delta=8)
+
+    def test_a_raised_hand_is_not_the_head(self):
+        def hand(d):
+            d.rectangle((600, 70, 640, 450), fill=255)  # arm, up from the shoulder
+            d.ellipse((580, 20, 660, 100), fill=255)    # hand, above the head
+        self.assertHead(self.awkward(hand), top=150)
+
+    def test_something_left_above_the_head_is_ignored(self):
+        self.assertHead(self.awkward(lambda d: d.ellipse((60, 10, 180, 110), fill=255)), top=150)  # a lamp
+
+    def test_a_bun_stays_in_the_picture(self):
+        found = self.awkward(lambda d: d.ellipse((350, 70, 450, 170), fill=255))
+        self.assertHead(found, top=70)  # measured as the head, cropped from the top of the bun
+
+    def test_a_shoulder_rising_on_its_own_is_not_the_head(self):
+        # head tilted away, so the far shoulder shows up as its own wide, sloping shape
+        found = self.awkward(lambda d: d.polygon([(530, 260), (560, 260), (800, 700), (520, 700)], fill=255),
+                             head=(300, 150, 500, 390))
+        self.assertHead(found, top=150)
+
+    def test_head_cut_off_by_the_top_of_the_photo(self):
+        self.assertHead(self.awkward(lambda d: None, head=(300, -100, 500, 220)), top=0)
+
+    def test_no_person_explains(self):
+        mask = Image.new("L", (800, 600), 0)
+        ImageDraw.Draw(mask).ellipse((10, 10, 40, 40), fill=255)  # a speck
+        with self.assertRaisesRegex(SystemExit, "Couldn't find a person"):
+            portrait.head_span(mask)
+
+    def test_palette_png_keeps_its_transparent_background(self):
+        img = bust().convert("RGBA").quantize(16)
+        img.info["transparency"] = img.getpixel((0, 0))
+        out = portrait.cut_out(img, "no-such-model")  # would fail if it went to background removal
+        self.assertEqual(out.getpixel((0, 0))[3], 0)
+        self.assertEqual(out.getpixel((200, 120))[3], 255)
+
+    def test_sideways_phone_photos_are_turned_upright(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            exif = Image.Exif()
+            exif[0x0112] = 6  # "rotate 90° to view"
+            bust().rotate(90, expand=True).save(Path(tmp) / "photo.png", exif=exif)
+            (Path(tmp) / "config.yml").write_text("portrait:\n  photo: photo.png\n", encoding="utf-8")
+            seen = []
+            with mock.patch.object(portrait, "to_ascii", lambda image, s: seen.append(image.size) or ["x"]), \
+                    mock.patch("sys.argv", ["portrait", str(Path(tmp) / "config.yml")]), \
+                    contextlib.redirect_stdout(io.StringIO()):
+                portrait.main()
+            self.assertEqual(seen, [(400, 500)])
 
     def test_head_framing_zooms_in(self):
         mask = Image.new("L", (800, 900), 0)
