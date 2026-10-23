@@ -7,7 +7,12 @@ from pathlib import Path
 
 from PIL import Image, ImageDraw
 
-from card import build, config, portrait
+import io
+from unittest import mock
+
+import yaml
+
+from card import build, config, portrait, preview
 from card.themes import PRESETS
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -15,6 +20,16 @@ ROOT = Path(__file__).resolve().parent.parent
 
 def load():
     return config.load(ROOT / "config.yml")
+
+
+def bust():
+    """A head-and-shoulders shape on a transparent background, so no background removal is needed."""
+    img = Image.new("RGBA", (400, 500), (0, 0, 0, 0))
+    d = ImageDraw.Draw(img)
+    d.ellipse((130, 40, 270, 200), fill=(60, 40, 30, 255))
+    d.rectangle((175, 190, 225, 260), fill=(200, 150, 120, 255))
+    d.polygon([(60, 500), (100, 270), (300, 270), (340, 500)], fill=(40, 40, 60, 255))
+    return img
 
 
 class ConfigTest(unittest.TestCase):
@@ -137,14 +152,8 @@ class HeaderTest(unittest.TestCase):
 
 class PortraitTest(unittest.TestCase):
     def test_transparent_png_needs_no_background_removal(self):
-        # a simple bust: round head, narrow neck, wide shoulders, on a transparent background
-        img = Image.new("RGBA", (400, 500), (0, 0, 0, 0))
-        d = ImageDraw.Draw(img)
-        d.ellipse((130, 40, 270, 200), fill=(60, 40, 30, 255))
-        d.rectangle((175, 190, 225, 260), fill=(200, 150, 120, 255))
-        d.polygon([(60, 500), (100, 270), (300, 270), (340, 500)], fill=(40, 40, 60, 255))
         settings = load()["portrait"] | {"crop": None, "columns": 40, "rows": 24}
-        lines = portrait.to_ascii(img, settings)
+        lines = portrait.to_ascii(bust(), settings)
         self.assertTrue(lines)
         self.assertLessEqual(max(map(len, lines)), 40)
         self.assertTrue(all(set(line) <= set(settings["ramp"]) for line in lines))
@@ -184,6 +193,113 @@ class PortraitTest(unittest.TestCase):
         self.assertAlmostEqual(top, 60, delta=3)
         self.assertAlmostEqual(width, 160, delta=16)
         self.assertAlmostEqual(centre, 460, delta=16)
+
+
+FORM = """### Your photo
+
+<img width="800" alt="me" src="https://github.com/user-attachments/assets/1234-abcd" />
+
+### Title
+
+ada@lovelace
+
+### Details
+
+OS: Analytical Engine
+# Contact
+Email: ada@example.com: yes
+
+### Theme
+
+nord
+
+### Layout
+
+stacked
+
+### Info style
+
+arrows
+
+### Portrait characters
+
+blocks
+
+### Framing
+
+shoulders
+
+### Frame
+
+window
+
+### Animations
+
+- [X] rain
+- [ ] thoughts
+- [x] cursor
+
+### Invert
+
+- [ ] invert
+"""
+
+
+
+
+class PreviewTest(unittest.TestCase):
+    def test_form_answers_become_a_config(self):
+        raw = preview.to_config(preview.parse_form(FORM), {"title": "x", "portrait": {"crop": [1, 2, 3, 4]}})
+        self.assertEqual(raw["title"], "ada@lovelace")
+        self.assertEqual(raw["info"], [{"OS": "Analytical Engine"}, {"section": "Contact"}, {"Email": "ada@example.com: yes"}])
+        self.assertEqual(raw["style"], {"theme": "nord", "layout": "stacked", "info_style": "arrows", "charset": "blocks",
+                                        "invert": False, "frame": "window", "animations": ["rain", "cursor"]})
+        self.assertNotIn("crop", raw["portrait"])
+        self.assertEqual(raw["portrait"]["framing"], "shoulders")
+
+    def test_only_uploaded_photos_are_fetched(self):
+        self.assertEqual(preview.photo_url("![me](https://github.com/user-attachments/assets/42)"),
+                         "https://github.com/user-attachments/assets/42")
+        for bad in ("![x](https://evil.example/a.png)", "![x](http://github.com/user-attachments/assets/1)",
+                    "![x](https://github.com/someone/repo/raw/main/a.png)", "no photo"):
+            with self.assertRaises(preview.PreviewError, msg=bad):
+                preview.photo_url(bad)
+
+    def test_too_many_rows_explain(self):
+        with self.assertRaisesRegex(preview.PreviewError, "40"):
+            preview.info_rows("\n".join(f"k{i}: v" for i in range(41)))
+
+    def test_form_choices_match_the_builder(self):
+        form = yaml.safe_load((ROOT / ".github/ISSUE_TEMPLATE/preview.yml").read_text(encoding="utf-8"))
+        fields = {f["attributes"]["label"]: f["attributes"] for f in form["body"] if f["type"] != "markdown"}
+        self.assertEqual(fields["Theme"]["options"], list(PRESETS))
+        self.assertEqual(fields["Layout"]["options"], list(config.LAYOUTS))
+        self.assertEqual(fields["Info style"]["options"], list(config.INFO_STYLES))
+        self.assertEqual(fields["Portrait characters"]["options"], list(config.CHARSETS))
+        self.assertEqual(sorted(fields["Framing"]["options"]), sorted(config.FRAMINGS))
+        self.assertEqual(fields["Frame"]["options"], list(config.FRAMES))
+        self.assertEqual([o["label"] for o in fields["Animations"]["options"]], list(config.ANIMATIONS))
+        self.assertIn("Your photo", fields)
+
+    def test_issue_to_cards(self):
+        png = io.BytesIO()
+        bust().save(png, "PNG")
+        with tempfile.TemporaryDirectory() as tmp, mock.patch.object(preview, "download", return_value=png.getvalue()):
+            out = Path(tmp)
+            cards = preview.make(FORM, out)
+            self.assertEqual(sorted(cards), ["dark_mode.svg", "light_mode.svg"])
+            self.assertFalse((out / "photo.jpg").exists())
+            svg = (out / "dark_mode.svg").read_text(encoding="utf-8")
+            self.assertIn("ada@lovelace", svg)
+            self.assertIn('class="rain"', svg)
+            self.assertIn("__BASE__/dark_mode.svg", preview.comment(out, cards, "https://github.com/o/r/generate"))
+
+    def test_replies_cant_ping_or_escape(self):
+        self.assertNotIn("@someone", preview.failed("style.theme: '@someone' is not one of github"))
+        with tempfile.TemporaryDirectory() as tmp:
+            (Path(tmp) / "config.yml").write_text("title: a```b\n", encoding="utf-8")
+            text = preview.comment(Path(tmp), [], "u")
+            self.assertIn("````yaml\ntitle: a```b\n````", text)
 
 
 if __name__ == "__main__":

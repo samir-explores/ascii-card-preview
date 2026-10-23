@@ -1,0 +1,116 @@
+name: Preview my card
+description: Upload a photo, pick a style, and a bot replies with your card. Nothing to install.
+title: "Card preview"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Drop a photo below, pick a style, and submit. In a minute or two a GitHub Action replies with your
+        card in dark and light, plus the `config.yml` to copy into your own profile repo.
+        **Edit this issue** to change anything and the preview is redrawn.
+
+        > **Heads up:** issues are public, so anyone can see the photo you upload here.
+        > Close or delete the issue when you're done.
+
+  - type: textarea
+    id: photo
+    attributes:
+      label: Your photo
+      description: Drag a jpg or png here. Any background works; a head-and-shoulders shot against a plain wall works best.
+    validations:
+      required: true
+
+  - type: input
+    id: title
+    attributes:
+      label: Title
+      description: The first line of the card, styled like a terminal prompt.
+      placeholder: you@yourname
+    validations:
+      required: true
+
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: |
+        One row per line. `Key: value` for a row, `# Name` for a section divider, an empty line for a spacer.
+      value: |
+        OS: Me
+        Host: Myself
+        Uptime: Powered by coffee
+
+        # Contact
+        GitHub: yourname
+    validations:
+      required: true
+
+  - type: dropdown
+    id: theme
+    attributes:
+      label: Theme
+      options: [github, dracula, nord, gruvbox, tokyo-night, catppuccin, solarized, monokai, one-dark, rose-pine]
+      default: 0
+    validations:
+      required: true
+
+  - type: dropdown
+    id: layout
+    attributes:
+      label: Layout
+      options: [side, portrait-right, stacked]
+      default: 0
+    validations:
+      required: true
+
+  - type: dropdown
+    id: info_style
+    attributes:
+      label: Info style
+      options: [dots, aligned, arrows]
+      default: 0
+    validations:
+      required: true
+
+  - type: dropdown
+    id: charset
+    attributes:
+      label: Portrait characters
+      options: [classic, blocks, binary, dots, dense, hex]
+      default: 0
+    validations:
+      required: true
+
+  - type: dropdown
+    id: framing
+    attributes:
+      label: Framing
+      options: [head, shoulders]
+      default: 0
+    validations:
+      required: true
+
+  - type: dropdown
+    id: frame
+    attributes:
+      label: Frame
+      options: [plain, window]
+      default: 0
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: animations
+    attributes:
+      label: Animations
+      options:
+        - label: thoughts
+        - label: rain
+        - label: cursor
+
+  - type: checkboxes
+    id: invert
+    attributes:
+      label: Invert
+      options:
+        - label: invert
