@@ -169,6 +169,16 @@ class PortraitTest(unittest.TestCase):
         self.assertAlmostEqual(width, 140, delta=6)
         self.assertAlmostEqual(centre, 200, delta=6)
 
+    def test_a_tuft_of_hair_is_not_the_head(self):
+        mask = Image.new("L", (800, 600), 0)
+        d = ImageDraw.Draw(mask)
+        d.ellipse((300, 100, 500, 340), fill=255)                         # head, 200 wide
+        d.polygon([(420, 110), (440, 20), (452, 22), (440, 112)], fill=255)  # thin tuft, ~15 wide
+        d.polygon([(120, 600), (220, 360), (580, 360), (680, 600)], fill=255)
+        top, width, centre = portrait.head_span(mask)
+        self.assertAlmostEqual(width, 200, delta=20)
+        self.assertAlmostEqual(centre, 400, delta=16)
+
     def test_head_framing_zooms_in(self):
         mask = Image.new("L", (800, 900), 0)
         d = ImageDraw.Draw(mask)

@@ -55,6 +55,10 @@ def head_span(mask, work_width=400):
     the top of the hair, then measure the head across its middle, at temple and ear level."""
     scale = mask.width / work_width
     small = mask.resize((work_width, max(1, round(mask.height / scale))), Image.Resampling.BOX)
+    # shave off anything thinner than ~3% of the photo, e.g. a tuft of hair sticking up,
+    # or it would pass for the top of the head and shrink the head to its own width
+    shave = work_width // 30 | 1
+    small = small.filter(ImageFilter.MinFilter(shave)).filter(ImageFilter.MaxFilter(shave))
     w, h = small.size
     data = list(small.point(lambda v: 1 if v > 128 else 0).tobytes())
     rows = [data[y * w:(y + 1) * w] for y in range(h)]
