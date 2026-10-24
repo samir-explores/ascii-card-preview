@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" font-family="ConsolasFallback,Consolas,'SFMono-Regular',Menlo,monospace" width="1126" height="600">
+<svg xmlns="http://www.w3.org/2000/svg" font-family="ConsolasFallback,Consolas,'SFMono-Regular',Menlo,monospace" width="1083" height="464">
 <style>
 .key {fill: #953800;}
 .value {fill: #0a3069;}
@@ -21,98 +21,85 @@ text, tspan {white-space: pre;}
   .cursor {animation: none;}
 }
 </style>
-<defs><clipPath id="card"><rect width="1126" height="600" rx="15"/></clipPath></defs>
-<rect width="1126" height="600" fill="#f6f8fa" rx="15"/>
+<defs><clipPath id="card"><rect width="1083" height="464" rx="15"/></clipPath></defs>
+<rect width="1083" height="464" fill="#f6f8fa" rx="15"/>
 
 <text fill="#24292f" font-size="9px">
-<tspan x="24.0" y="113.0">                                               4534334145</tspan>
-<tspan x="24.0" y="123.5">                         4787       55555454584135478753</tspan>
-<tspan x="24.0" y="134.0">                      44478BBA874458BBA8885377113174</tspan>
-<tspan x="24.0" y="144.5">                     7401758ABA8788A877775430403343</tspan>
-<tspan x="24.0" y="155.0">                     5511557444344530111131353003357A87755583333</tspan>
-<tspan x="24.0" y="165.5">                  8B8A441000111133000000331001000178745884457443344</tspan>
-<tspan x="24.0" y="176.0">                 58A777531000131000143100011000000000000000351101454</tspan>
-<tspan x="24.0" y="186.5">                 7777131333100144553100000000000000000000013431334344</tspan>
-<tspan x="24.0" y="197.0">                783111410131113445753100000000000000001001100110111154</tspan>
-<tspan x="24.0" y="207.5">                A431455455533300048510000000013333443113104544311101031</tspan>
-<tspan x="24.0" y="218.0">                54344431430110111440000000488BBBBBAABA833111133431031035</tspan>
-<tspan x="24.0" y="228.5">               334433141001333311113331114ACEECECCBAAABA8510000000011314</tspan>
-<tspan x="24.0" y="239.0">             44337544433114110014554333438CCCCBBCCBBAA8AAAA5000000000435</tspan>
-<tspan x="24.0" y="249.5">            53435454100110010013531331447BCCCBBBCCCCBBA8AA88A50000031345</tspan>
-<tspan x="24.0" y="260.0">          75554343131001011001111113475ACCBABCCCCCCCCBAA88BBAAA5300375</tspan>
-<tspan x="24.0" y="270.5">         7AAA813113100001410000144458BCCCCBBCBBCCBBAA87755578AA884015</tspan>
-<tspan x="24.0" y="281.0">        47ABA7573131444333000313348BBCABBAABCA8874311100001333778A504</tspan>
-<tspan x="24.0" y="291.5">        8A87433334444433000034145788A85444158885110001111344431137731</tspan>
-<tspan x="24.0" y="302.0">        A8314751000330001313734757531000001134AB7001333354475541004713</tspan>
-<tspan x="24.0" y="312.5">        7A474353334331110354414784000013334434BAA810110000001344313773</tspan>
-<tspan x="24.0" y="323.0">        8A874433300111011578535553344433331113ACCCB7300343331147ABBBA54</tspan>
-<tspan x="24.0" y="333.5">         8BA87310131010347887755577731310001487ACEEBA8778878BBBBCCBBA85575</tspan>
-<tspan x="24.0" y="344.0">         4CCA554133100135778AA8855510334558BAAABBECECBABCBCCCCEECBBBA8A4113</tspan>
-<tspan x="24.0" y="354.5">         8A8877741100011378AB874134443115ABCB8ACCCABCBA8ABBCCCCCCBBAA885313</tspan>
-<tspan x="24.0" y="365.0">         785BA8744310000348AB8338755577ACEEC78BAA888731344877777777777780355</tspan>
-<tspan x="24.0" y="375.5">          457A5554410004448A8777ABBCBCEEEEC8787331311000017BA885311334474188</tspan>
-<tspan x="24.0" y="386.0">          4AA57874433003447BABBBCCEEEEECCBBA53014433100003ABB8A8851013357758</tspan>
-<tspan x="24.0" y="396.5">           788A757744111145AABBCCCCCCCBBBABB83331000000375454445777433345747</tspan>
-<tspan x="24.0" y="407.0">           BCA85777441355548ABAAAA8875433757A7311111100533110000135874344477</tspan>
-<tspan x="24.0" y="417.5">           7BBC88855430055578ABA8854310157455433311111355578A731004754433177</tspan>
-<tspan x="24.0" y="428.0">           5ABAB8555540054348AAA8775313787310045455454557888AA8841333331134</tspan>
-<tspan x="24.0" y="438.5">            48AA75555540330357AA8754345840000357877777334555555574131111375</tspan>
-<tspan x="24.0" y="449.0">             5AA758877531301448AAA754458734447A7755355458A8410357533113148</tspan>
-<tspan x="24.0" y="459.5">              5AB887775531355347A875533475577775434785AAA8787788AA53313374</tspan>
-<tspan x="24.0" y="470.0">               58B857A775315883477755333345445311134445544444755751000141</tspan>
-<tspan x="24.0" y="480.5">                47A8BA8AA7758710475444333344558854544310110113111000014557775554</tspan>
-<tspan x="24.0" y="491.0">                  8A85AA77510000035544333333311454130100000100000358ABBBCCCCCCC8</tspan>
-<tspan x="24.0" y="501.5">                   337A875574441000454333333111113000000000000158ACCECCBAAAAAAA7</tspan>
-<tspan x="24.0" y="512.0">                     488758BA744431344333111100000000011100015ABCCCCBBA875544555</tspan>
-<tspan x="24.0" y="522.5">                    3457578B87443100034433100000003331111147ABCBCCCCCBA887544444</tspan>
-<tspan x="24.0" y="533.0">                 55775434455753100000001333331111100000037ABBBBCCCBA754444444444</tspan>
-<tspan x="24.0" y="543.5">                7457755444333455743000001333333344100037ABBBBBCCBBA8743333333443</tspan>
-<tspan x="24.0" y="554.0">           3347888888777755555575433333331333333311037ABBBBBBBBBA887787433100100</tspan>
-<tspan x="24.0" y="564.5">     47754754331100113445555555555754100000134444458ABBBBBBBBAA8755434310000</tspan>
-<tspan x="24.0" y="575.0">35555543100001134455544444444555555555744344444115888777887775544444444444555575</tspan>
+<tspan x="24.0" y="113.0">                                 113 5     44333</tspan>
+<tspan x="24.0" y="123.5">                           33511113333444454434444444</tspan>
+<tspan x="24.0" y="134.0">                          4333100000011333110000134A8A854</tspan>
+<tspan x="24.0" y="144.5">                         34100000110000113331011110037BBB874</tspan>
+<tspan x="24.0" y="155.0">                       4531100001113111311113331331110147ABA85</tspan>
+<tspan x="24.0" y="165.5">                 54  3433111100000001131133111133313441058BBBB84</tspan>
+<tspan x="24.0" y="176.0">               7A875573333411100000011333111133334334431017BAAAA7</tspan>
+<tspan x="24.0" y="186.5">             38AA87841103313430010000011311113341331333100348AAAB84</tspan>
+<tspan x="24.0" y="197.0">            4AAA88873001101100048877431010001001001110111005AAAAAAA5</tspan>
+<tspan x="24.0" y="207.5">           5AA88888800000000035AEEEEB85345140310130100011001AA8AAAAA7</tspan>
+<tspan x="24.0" y="218.0">          4AAA88888A4000000017BBBAAAABCCCBB75585444343000007A88AAAAAA5</tspan>
+<tspan x="24.0" y="228.5">          8A8888888A830011148A8533133458BCCCCCEBA8557333004AA88888AAAA</tspan>
+<tspan x="24.0" y="239.0">         7AA88888888A810003ACCB7544434433ACCCCC84333344314AA88888888AB8</tspan>
+<tspan x="24.0" y="249.5">         8A8888888888A74305CCCA57107578ABBCCCC75455558A57AA8888888888A8</tspan>
+<tspan x="24.0" y="260.0">         AA888888888AAAA537CCCCA411045ACCCCCCBA304345BB78888888888888AA3</tspan>
+<tspan x="24.0" y="270.5">        3AA8888888888B8888BCCCCCCBAABCCCCCCCCCA54478BB878888888888888AA4</tspan>
+<tspan x="24.0" y="281.0">        4A88888888888A885BCCCCCCCCCCCCCCCCCCACCBBBCCCA878888888888888AA4</tspan>
+<tspan x="24.0" y="291.5">         AA88888888887887ACCCCCCCCCCCCCCCCCCA8CCCCCCC8888888888888888AA</tspan>
+<tspan x="24.0" y="302.0">         8A888888888887874ACCCCCCCCCCCCCCBBCA8CBCCCCA7888888888888888A8</tspan>
+<tspan x="24.0" y="312.5">         5A8888888888888737BCCCCCCCBBBBBCCBCBCCCCCCB7788888888888888AA5</tspan>
+<tspan x="24.0" y="323.0">          8A888888888888878ACCCCCCBABBBBBCCBBBBBCCB77888888888888888A8</tspan>
+<tspan x="24.0" y="333.5">           8A8888888888778A88BCCCCCCCCCBCCCCBBCCCB77888778888888888AA4</tspan>
+<tspan x="24.0" y="344.0">           4AA888888777777BB878BBCCCCCCBAAABCCBB857777778888888888AA5</tspan>
+<tspan x="24.0" y="354.5">            4AA87777757A5ACCB88778BCCCCCCBCCCB8434557557777888888AA4</tspan>
+<tspan x="24.0" y="365.0">              887778AAB88CCCCBB88757ABBBBABB875A8754334555577788A8</tspan>
+<tspan x="24.0" y="375.5">               45ACBBBCAACCBCCBBA88875577755887BBBBBBAA87754558A7</tspan>
+<tspan x="24.0" y="386.0">                 58BCCEC8BCBBCBBCCA88A88778AA8ABABBBBBCCCBBB844</tspan>
+<tspan x="24.0" y="396.5">                   58BEECABCBBCBBCCCAAAA8AAA88BBABACECCEEEC853</tspan>
+<tspan x="24.0" y="407.0">                     38ABCBBBBCCBBCCCAAAA8A887BBBCBCEEEB874</tspan>
+<tspan x="24.0" y="417.5">                        457AABBCCABCCBAA7888ABBBEECBA754</tspan>
+<tspan x="24.0" y="428.0">                           44457788ABAA8888AAAB77744</tspan>
+<tspan x="24.0" y="438.5">                                  3133333345443</tspan>
 </text>
 
 <text fill="#24292f" font-size="16px">
-<tspan x="488" y="256">checking@ascii <tspan class="dots">-------------------------------------------------</tspan></tspan>
-<tspan x="488" y="276"><tspan class="dots">. </tspan><tspan class="key">OS</tspan>:<tspan class="dots"> .................................................... </tspan><tspan class="value">Hello</tspan></tspan>
-<tspan x="488" y="296"><tspan class="dots">. </tspan><tspan class="key">Host</tspan>:<tspan class="dots"> .................................................. </tspan><tspan class="value">World</tspan></tspan>
-<tspan x="488" y="316"><tspan class="dots">. </tspan><tspan class="key">Uptime</tspan>:<tspan class="dots"> .................................... </tspan><tspan class="value">Powered by coffee</tspan></tspan>
-<tspan x="488" y="336"><tspan class="dots">. </tspan><tspan class="key">Kernel</tspan>:<tspan class="dots"> .................................. </tspan><tspan class="value">Developer 1.0.0-LTS</tspan></tspan>
-<tspan x="488" y="356"><tspan class="dots">.</tspan></tspan>
-<tspan x="488" y="376"><tspan class="dots">. </tspan><tspan class="key">Languages</tspan>:<tspan class="dots"> ................................ </tspan><tspan class="value">TypeScript, Python</tspan></tspan>
-<tspan x="488" y="396"><tspan class="dots">. </tspan><tspan class="key">Hobbies</tspan>:<tspan class="dots"> ........................ </tspan><tspan class="value">Coding anything &amp; everything</tspan></tspan>
-<tspan x="488" y="416"><tspan class="dots">.</tspan></tspan>
-<tspan x="488" y="436"><tspan class="dots">- </tspan>Contact <tspan class="dots">------------------------------------------------------</tspan></tspan>
-<tspan x="488" y="456"><tspan class="dots">. </tspan><tspan class="key">GitHub</tspan>:<tspan class="dots"> ............................................. </tspan><tspan class="value">yourname</tspan></tspan>
-<tspan x="488" y="476"><tspan class="dots">. </tspan><tspan class="key">Email</tspan>:<tspan class="dots"> ....................................... </tspan><tspan class="value">you@example.com</tspan></tspan>
+<tspan x="445" y="188">checking@ascii <tspan class="dots">-------------------------------------------------</tspan></tspan>
+<tspan x="445" y="208"><tspan class="dots">. </tspan><tspan class="key">OS</tspan>:<tspan class="dots"> .................................................... </tspan><tspan class="value">Hello</tspan></tspan>
+<tspan x="445" y="228"><tspan class="dots">. </tspan><tspan class="key">Host</tspan>:<tspan class="dots"> .................................................. </tspan><tspan class="value">World</tspan></tspan>
+<tspan x="445" y="248"><tspan class="dots">. </tspan><tspan class="key">Uptime</tspan>:<tspan class="dots"> .................................... </tspan><tspan class="value">Powered by coffee</tspan></tspan>
+<tspan x="445" y="268"><tspan class="dots">. </tspan><tspan class="key">Kernel</tspan>:<tspan class="dots"> .................................. </tspan><tspan class="value">Developer 1.0.0-LTS</tspan></tspan>
+<tspan x="445" y="288"><tspan class="dots">.</tspan></tspan>
+<tspan x="445" y="308"><tspan class="dots">. </tspan><tspan class="key">Languages</tspan>:<tspan class="dots"> ................................ </tspan><tspan class="value">TypeScript, Python</tspan></tspan>
+<tspan x="445" y="328"><tspan class="dots">. </tspan><tspan class="key">Hobbies</tspan>:<tspan class="dots"> ........................ </tspan><tspan class="value">Coding anything &amp; everything</tspan></tspan>
+<tspan x="445" y="348"><tspan class="dots">.</tspan></tspan>
+<tspan x="445" y="368"><tspan class="dots">- </tspan>Contact <tspan class="dots">------------------------------------------------------</tspan></tspan>
+<tspan x="445" y="388"><tspan class="dots">. </tspan><tspan class="key">GitHub</tspan>:<tspan class="dots"> ............................................. </tspan><tspan class="value">yourname</tspan></tspan>
+<tspan x="445" y="408"><tspan class="dots">. </tspan><tspan class="key">Email</tspan>:<tspan class="dots"> ....................................... </tspan><tspan class="value">you@example.com</tspan></tspan>
 </text>
-<text x="488" y="496" font-size="16px" fill="#953800">checking@ascii:~$ </text>
-<rect class="cursor" x="661" y="483" width="10" height="18" fill="#0a3069"/>
-<text class="thought" x="114" y="167" font-size="12px" fill="#953800" style="--drift: -12px; animation-duration: 6.45s; animation-delay: -4.20s">∑</text>
-<text class="thought" x="125" y="156" font-size="16px" fill="#0a3069" style="--drift: -5px; animation-duration: 6.17s; animation-delay: -3.13s">π</text>
-<text class="thought" x="133" y="156" font-size="12px" fill="#c2cfde" style="--drift: -13px; animation-duration: 6.27s; animation-delay: -2.66s">∫dx</text>
-<text class="thought" x="150" y="125" font-size="13px" fill="#953800" style="--drift: -10px; animation-duration: 7.19s; animation-delay: -7.02s">√2</text>
-<text class="thought" x="158" y="114" font-size="13px" fill="#0a3069" style="--drift: 10px; animation-duration: 6.43s; animation-delay: -0.76s">λ</text>
-<text class="thought" x="167" y="114" font-size="12px" fill="#c2cfde" style="--drift: -9px; animation-duration: 7.71s; animation-delay: -1.45s">∞</text>
-<text class="thought" x="183" y="125" font-size="16px" fill="#953800" style="--drift: 12px; animation-duration: 7.86s; animation-delay: -3.90s">Δ</text>
-<text class="thought" x="194" y="125" font-size="13px" fill="#0a3069" style="--drift: -11px; animation-duration: 7.36s; animation-delay: -2.21s">e^iπ</text>
-<text class="thought" x="199" y="125" font-size="14px" fill="#c2cfde" style="--drift: 11px; animation-duration: 6.90s; animation-delay: -3.42s">x²</text>
-<text class="thought" x="216" y="114" font-size="13px" fill="#953800" style="--drift: -12px; animation-duration: 6.22s; animation-delay: -3.18s">log n</text>
-<text class="thought" x="231" y="114" font-size="14px" fill="#0a3069" style="--drift: -12px; animation-duration: 7.27s; animation-delay: -6.99s">&lt;?php</text>
-<text class="thought" x="235" y="114" font-size="12px" fill="#c2cfde" style="--drift: 5px; animation-duration: 7.05s; animation-delay: -3.50s">$this-&gt;</text>
-<text class="thought" x="253" y="114" font-size="14px" fill="#953800" style="--drift: -11px; animation-duration: 7.42s; animation-delay: -4.93s">add_action()</text>
-<text class="thought" x="261" y="114" font-size="14px" fill="#0a3069" style="--drift: 11px; animation-duration: 8.98s; animation-delay: -7.38s">&lt;App /&gt;</text>
-<text class="thought" x="265" y="114" font-size="13px" fill="#c2cfde" style="--drift: -9px; animation-duration: 7.39s; animation-delay: -1.24s">useState()</text>
-<text class="thought" x="284" y="104" font-size="16px" fill="#953800" style="--drift: 13px; animation-duration: 6.39s; animation-delay: -1.58s">{props}</text>
-<text class="thought" x="287" y="104" font-size="14px" fill="#0a3069" style="--drift: -12px; animation-duration: 7.35s; animation-delay: -4.04s">npm i</text>
-<text class="thought" x="305" y="104" font-size="13px" fill="#c2cfde" style="--drift: 14px; animation-duration: 8.96s; animation-delay: -6.12s">await</text>
-<text class="thought" x="309" y="104" font-size="13px" fill="#953800" style="--drift: -9px; animation-duration: 6.45s; animation-delay: -4.25s">=&gt;</text>
-<text class="thought" x="322" y="104" font-size="14px" fill="#0a3069" style="--drift: 10px; animation-duration: 6.01s; animation-delay: -2.52s">def</text>
-<text class="thought" x="341" y="146" font-size="16px" fill="#c2cfde" style="--drift: -9px; animation-duration: 8.07s; animation-delay: -4.16s">import</text>
-<text class="thought" x="346" y="146" font-size="12px" fill="#953800" style="--drift: 5px; animation-duration: 7.18s; animation-delay: -3.46s">print()</text>
-<text class="thought" x="363" y="146" font-size="13px" fill="#0a3069" style="--drift: -5px; animation-duration: 7.32s; animation-delay: -0.80s">AI</text>
-<text class="thought" x="369" y="156" font-size="16px" fill="#c2cfde" style="--drift: -13px; animation-duration: 8.85s; animation-delay: -5.43s">LLM</text>
-<text class="thought" x="376" y="156" font-size="12px" fill="#953800" style="--drift: 9px; animation-duration: 6.76s; animation-delay: -2.35s">MCP</text>
-<text class="thought" x="363" y="188" font-size="13px" fill="#0a3069" style="--drift: 7px; animation-duration: 8.98s; animation-delay: -4.18s">agent.run()</text>
-<text class="thought" x="398" y="188" font-size="13px" fill="#c2cfde" style="--drift: -9px; animation-duration: 7.03s; animation-delay: -1.86s">∇loss</text>
+<text x="445" y="428" font-size="16px" fill="#953800">checking@ascii:~$ </text>
+<rect class="cursor" x="618" y="415" width="10" height="18" fill="#0a3069"/>
+<text class="thought" x="98" y="178" font-size="12px" fill="#953800" style="--drift: -12px; animation-duration: 6.45s; animation-delay: -4.20s">∑</text>
+<text class="thought" x="109" y="167" font-size="16px" fill="#0a3069" style="--drift: -5px; animation-duration: 6.17s; animation-delay: -3.13s">π</text>
+<text class="thought" x="116" y="156" font-size="12px" fill="#c2cfde" style="--drift: -13px; animation-duration: 6.27s; animation-delay: -2.66s">∫dx</text>
+<text class="thought" x="132" y="167" font-size="13px" fill="#953800" style="--drift: -10px; animation-duration: 7.19s; animation-delay: -7.02s">√2</text>
+<text class="thought" x="140" y="156" font-size="13px" fill="#0a3069" style="--drift: 10px; animation-duration: 6.43s; animation-delay: -0.76s">λ</text>
+<text class="thought" x="148" y="146" font-size="12px" fill="#c2cfde" style="--drift: -9px; animation-duration: 7.71s; animation-delay: -1.45s">∞</text>
+<text class="thought" x="164" y="125" font-size="16px" fill="#953800" style="--drift: 12px; animation-duration: 7.86s; animation-delay: -3.90s">Δ</text>
+<text class="thought" x="175" y="114" font-size="13px" fill="#0a3069" style="--drift: -11px; animation-duration: 7.36s; animation-delay: -2.21s">e^iπ</text>
+<text class="thought" x="180" y="114" font-size="14px" fill="#c2cfde" style="--drift: 11px; animation-duration: 6.90s; animation-delay: -3.42s">x²</text>
+<text class="thought" x="196" y="114" font-size="13px" fill="#953800" style="--drift: -12px; animation-duration: 6.22s; animation-delay: -3.18s">log n</text>
+<text class="thought" x="210" y="104" font-size="14px" fill="#0a3069" style="--drift: -12px; animation-duration: 7.27s; animation-delay: -6.99s">&lt;?php</text>
+<text class="thought" x="214" y="104" font-size="12px" fill="#c2cfde" style="--drift: 5px; animation-duration: 7.05s; animation-delay: -3.50s">$this-&gt;</text>
+<text class="thought" x="231" y="114" font-size="14px" fill="#953800" style="--drift: -11px; animation-duration: 7.42s; animation-delay: -4.93s">add_action()</text>
+<text class="thought" x="239" y="114" font-size="14px" fill="#0a3069" style="--drift: 11px; animation-duration: 8.98s; animation-delay: -7.38s">&lt;App /&gt;</text>
+<text class="thought" x="243" y="114" font-size="13px" fill="#c2cfde" style="--drift: -9px; animation-duration: 7.39s; animation-delay: -1.24s">useState()</text>
+<text class="thought" x="261" y="104" font-size="16px" fill="#953800" style="--drift: 13px; animation-duration: 6.39s; animation-delay: -1.58s">{props}</text>
+<text class="thought" x="265" y="104" font-size="14px" fill="#0a3069" style="--drift: -12px; animation-duration: 7.35s; animation-delay: -4.04s">npm i</text>
+<text class="thought" x="282" y="114" font-size="13px" fill="#c2cfde" style="--drift: 14px; animation-duration: 8.96s; animation-delay: -6.12s">await</text>
+<text class="thought" x="286" y="114" font-size="13px" fill="#953800" style="--drift: -9px; animation-duration: 6.45s; animation-delay: -4.25s">=&gt;</text>
+<text class="thought" x="298" y="114" font-size="14px" fill="#0a3069" style="--drift: 10px; animation-duration: 6.01s; animation-delay: -2.52s">def</text>
+<text class="thought" x="316" y="125" font-size="16px" fill="#c2cfde" style="--drift: -9px; animation-duration: 8.07s; animation-delay: -4.16s">import</text>
+<text class="thought" x="321" y="125" font-size="12px" fill="#953800" style="--drift: 5px; animation-duration: 7.18s; animation-delay: -3.46s">print()</text>
+<text class="thought" x="338" y="136" font-size="13px" fill="#0a3069" style="--drift: -5px; animation-duration: 7.32s; animation-delay: -0.80s">AI</text>
+<text class="thought" x="344" y="136" font-size="16px" fill="#c2cfde" style="--drift: -13px; animation-duration: 8.85s; animation-delay: -5.43s">LLM</text>
+<text class="thought" x="350" y="146" font-size="12px" fill="#953800" style="--drift: 9px; animation-duration: 6.76s; animation-delay: -2.35s">MCP</text>
+<text class="thought" x="320" y="167" font-size="13px" fill="#0a3069" style="--drift: 7px; animation-duration: 8.98s; animation-delay: -4.18s">agent.run()</text>
+<text class="thought" x="365" y="167" font-size="13px" fill="#c2cfde" style="--drift: -9px; animation-duration: 7.03s; animation-delay: -1.86s">∇loss</text>
 </svg>
